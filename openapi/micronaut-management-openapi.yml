@@ -1,0 +1,345 @@
+openapi: 3.0.3
+info:
+  title: Micronaut Management Endpoints API
+  description: >-
+    Micronaut Management provides built-in endpoints for monitoring and managing
+    Micronaut applications. Endpoints include health checks, application info,
+    beans introspection, loggers management, metrics, routes, environment, and
+    thread dumps.
+  version: 4.7.0
+  contact:
+    name: Micronaut Team
+    url: https://micronaut.io/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+  - url: http://localhost:8080
+    description: Default Micronaut server
+paths:
+  /health:
+    get:
+      operationId: getHealth
+      summary: Application health
+      description: Returns the health status of the application and its indicators (disk space, database, etc.)
+      tags:
+        - Health
+      responses:
+        '200':
+          description: Application is healthy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResult'
+        '503':
+          description: Application is unhealthy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResult'
+  /info:
+    get:
+      operationId: getInfo
+      summary: Application info
+      description: Returns application information from InfoSource beans
+      tags:
+        - Info
+      responses:
+        '200':
+          description: Application info
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /beans:
+    get:
+      operationId: getBeans
+      summary: List application beans
+      description: Returns all bean definitions in the application context
+      tags:
+        - Beans
+      responses:
+        '200':
+          description: Bean definitions
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  beans:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/BeanInfo'
+  /loggers:
+    get:
+      operationId: getLoggers
+      summary: List all loggers
+      description: Returns all logger configurations and their levels
+      tags:
+        - Loggers
+      responses:
+        '200':
+          description: Logger configurations
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  levels:
+                    type: array
+                    items:
+                      type: string
+                  loggers:
+                    type: object
+                    additionalProperties:
+                      $ref: '#/components/schemas/LoggerInfo'
+  /loggers/{name}:
+    get:
+      operationId: getLogger
+      summary: Get logger level
+      tags:
+        - Loggers
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Logger level
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoggerInfo'
+    post:
+      operationId: setLoggerLevel
+      summary: Set logger level
+      tags:
+        - Loggers
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                configuredLevel:
+                  type: string
+                  enum: [TRACE, DEBUG, INFO, WARN, ERROR, OFF]
+      responses:
+        '200':
+          description: Logger level updated
+  /metrics:
+    get:
+      operationId: listMetrics
+      summary: List available metrics
+      tags:
+        - Metrics
+      responses:
+        '200':
+          description: Metric names
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  names:
+                    type: array
+                    items:
+                      type: string
+  /metrics/{name}:
+    get:
+      operationId: getMetric
+      summary: Get metric details
+      tags:
+        - Metrics
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: tag
+          in: query
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Metric measurements
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  measurements:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        statistic:
+                          type: string
+                        value:
+                          type: number
+                  availableTags:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        tag:
+                          type: string
+                        values:
+                          type: array
+                          items:
+                            type: string
+  /routes:
+    get:
+      operationId: getRoutes
+      summary: List application routes
+      description: Returns all URI routes in the application
+      tags:
+        - Routes
+      responses:
+        '200':
+          description: Route definitions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    method:
+                      type: string
+                    uri:
+                      type: string
+                    produces:
+                      type: array
+                      items:
+                        type: string
+  /env:
+    get:
+      operationId: getEnvironment
+      summary: Environment properties
+      description: Returns all resolved configuration properties and their sources
+      tags:
+        - Environment
+      responses:
+        '200':
+          description: Environment information
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  activeEnvironments:
+                    type: array
+                    items:
+                      type: string
+                  packages:
+                    type: array
+                    items:
+                      type: string
+  /threaddump:
+    get:
+      operationId: getThreadDump
+      summary: Thread dump
+      description: Returns a thread dump of the JVM
+      tags:
+        - JVM
+      responses:
+        '200':
+          description: Thread dump
+          content:
+            application/json:
+              schema:
+                type: object
+  /refresh:
+    post:
+      operationId: refresh
+      summary: Refresh application configuration
+      description: Triggers a refresh of @Refreshable beans
+      tags:
+        - Configuration
+      responses:
+        '200':
+          description: Configuration refreshed
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                description: List of changed configuration keys
+  /stop:
+    post:
+      operationId: stop
+      summary: Stop the application
+      description: Gracefully stops the application (must be explicitly enabled)
+      tags:
+        - Lifecycle
+      responses:
+        '200':
+          description: Application stopping
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+components:
+  schemas:
+    HealthResult:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Application name
+        status:
+          type: string
+          enum: [UP, DOWN, UNKNOWN]
+        details:
+          type: object
+          additionalProperties:
+            type: object
+            properties:
+              name:
+                type: string
+              status:
+                type: string
+              details:
+                type: object
+                additionalProperties: true
+    BeanInfo:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Bean type (fully qualified class name)
+        scope:
+          type: string
+          description: Bean scope (singleton, prototype, etc.)
+        qualifier:
+          type: string
+        dependencies:
+          type: array
+          items:
+            type: string
+    LoggerInfo:
+      type: object
+      properties:
+        configuredLevel:
+          type: string
+        effectiveLevel:
+          type: string

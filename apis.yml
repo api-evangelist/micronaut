@@ -38,6 +38,10 @@ apis:
         url: https://docs.micronaut.io/latest/guide/
       - type: Getting Started
         url: https://guides.micronaut.io/
+      - type: JSONSchema
+        url: json-schema/micronaut-application-config.json
+      - type: OpenAPI
+        url: openapi/micronaut-management-openapi.yml
 common:
   - type: Website
     url: https://micronaut.io/

@@ -1,0 +1,403 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.com/micronaut/json-schema/micronaut-application-config.json",
+  "title": "Micronaut Application Configuration",
+  "description": "JSON Schema for Micronaut application.yml configuration. Covers server, datasources, JPA, security, management endpoints, HTTP client, and service discovery settings.",
+  "type": "object",
+  "properties": {
+    "micronaut": {
+      "type": "object",
+      "properties": {
+        "application": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Application name for service discovery"
+            }
+          }
+        },
+        "server": {
+          "type": "object",
+          "description": "Embedded server configuration",
+          "properties": {
+            "host": {
+              "type": "string",
+              "default": "localhost",
+              "description": "Server host"
+            },
+            "port": {
+              "type": "integer",
+              "default": 8080,
+              "description": "Server port (-1 for random)"
+            },
+            "max-request-size": {
+              "type": "string",
+              "default": "10MB"
+            },
+            "read-timeout": {
+              "type": "string",
+              "description": "Read timeout duration"
+            },
+            "idle-timeout": {
+              "type": "string",
+              "description": "Idle connection timeout"
+            },
+            "context-path": {
+              "type": "string",
+              "description": "Application context path"
+            },
+            "cors": {
+              "type": "object",
+              "properties": {
+                "enabled": { "type": "boolean", "default": false },
+                "configurations": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object",
+                    "properties": {
+                      "allowed-origins": {
+                        "type": "array",
+                        "items": { "type": "string" }
+                      },
+                      "allowed-methods": {
+                        "type": "array",
+                        "items": { "type": "string" }
+                      },
+                      "allowed-headers": {
+                        "type": "array",
+                        "items": { "type": "string" }
+                      },
+                      "max-age": { "type": "integer" }
+                    }
+                  }
+                }
+              }
+            },
+            "ssl": {
+              "type": "object",
+              "properties": {
+                "enabled": { "type": "boolean", "default": false },
+                "port": { "type": "integer", "default": 8443 },
+                "key-store": {
+                  "type": "object",
+                  "properties": {
+                    "path": { "type": "string" },
+                    "password": { "type": "string" },
+                    "type": { "type": "string" }
+                  }
+                }
+              }
+            },
+            "netty": {
+              "type": "object",
+              "properties": {
+                "worker": {
+                  "type": "object",
+                  "properties": {
+                    "threads": { "type": "integer" }
+                  }
+                },
+                "max-initial-line-length": { "type": "integer" },
+                "max-header-size": { "type": "integer" }
+              }
+            }
+          }
+        },
+        "http": {
+          "type": "object",
+          "properties": {
+            "client": {
+              "type": "object",
+              "description": "HTTP client configuration",
+              "properties": {
+                "read-timeout": { "type": "string", "default": "10s" },
+                "connect-timeout": { "type": "string", "default": "5s" },
+                "max-content-length": { "type": "integer" },
+                "pool": {
+                  "type": "object",
+                  "properties": {
+                    "enabled": { "type": "boolean", "default": true },
+                    "max-connections": { "type": "integer" },
+                    "max-pending-acquires": { "type": "integer" }
+                  }
+                }
+              }
+            },
+            "services": {
+              "type": "object",
+              "description": "Named HTTP service configurations for @Client",
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "urls": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  },
+                  "url": { "type": "string" },
+                  "path": { "type": "string" },
+                  "health-check": { "type": "boolean" },
+                  "health-check-interval": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "security": {
+          "type": "object",
+          "description": "Micronaut Security configuration",
+          "properties": {
+            "enabled": { "type": "boolean", "default": true },
+            "authentication": {
+              "type": "string",
+              "enum": ["bearer", "session", "cookie", "idtoken"],
+              "description": "Authentication mode"
+            },
+            "token": {
+              "type": "object",
+              "properties": {
+                "jwt": {
+                  "type": "object",
+                  "properties": {
+                    "signatures": {
+                      "type": "object",
+                      "properties": {
+                        "secret": {
+                          "type": "object",
+                          "properties": {
+                            "generator": {
+                              "type": "object",
+                              "properties": {
+                                "secret": { "type": "string" },
+                                "jws-algorithm": { "type": "string", "default": "HS256" }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "refresh": {
+                  "type": "object",
+                  "properties": {
+                    "cookie": {
+                      "type": "object",
+                      "properties": {
+                        "cookie-name": { "type": "string" }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "oauth2": {
+              "type": "object",
+              "properties": {
+                "clients": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object",
+                    "properties": {
+                      "client-id": { "type": "string" },
+                      "client-secret": { "type": "string" },
+                      "grant-type": { "type": "string" },
+                      "openid": {
+                        "type": "object",
+                        "properties": {
+                          "issuer": { "type": "string" }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "intercept-url-map": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "pattern": { "type": "string" },
+                  "http-method": { "type": "string" },
+                  "access": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "router": {
+          "type": "object",
+          "properties": {
+            "static-resources": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "paths": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  },
+                  "mapping": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "datasources": {
+      "type": "object",
+      "description": "DataSource configurations",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "url": { "type": "string" },
+          "driver-class-name": { "type": "string" },
+          "username": { "type": "string" },
+          "password": { "type": "string" },
+          "dialect": { "type": "string" },
+          "schema-generate": {
+            "type": "string",
+            "enum": ["NONE", "CREATE", "CREATE_DROP", "DROP_CREATE"]
+          },
+          "maximum-pool-size": { "type": "integer", "default": 10 },
+          "minimum-idle": { "type": "integer" }
+        }
+      }
+    },
+    "jpa": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "entity-scan": {
+            "type": "object",
+            "properties": {
+              "packages": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            }
+          },
+          "properties": {
+            "type": "object",
+            "properties": {
+              "hibernate": {
+                "type": "object",
+                "properties": {
+                  "hbm2ddl": {
+                    "type": "object",
+                    "properties": {
+                      "auto": {
+                        "type": "string",
+                        "enum": ["none", "validate", "update", "create", "create-drop"]
+                      }
+                    }
+                  },
+                  "show_sql": { "type": "boolean" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "endpoints": {
+      "type": "object",
+      "description": "Management endpoint configuration",
+      "properties": {
+        "all": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean", "default": false },
+            "sensitive": { "type": "boolean", "default": true }
+          }
+        },
+        "health": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean", "default": true },
+            "sensitive": { "type": "boolean", "default": false },
+            "details-visible": {
+              "type": "string",
+              "enum": ["AUTHENTICATED", "ANONYMOUS", "NEVER"]
+            }
+          }
+        },
+        "info": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean", "default": true },
+            "sensitive": { "type": "boolean", "default": false }
+          }
+        },
+        "beans": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean", "default": false },
+            "sensitive": { "type": "boolean", "default": true }
+          }
+        },
+        "loggers": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean", "default": false },
+            "sensitive": { "type": "boolean", "default": true }
+          }
+        },
+        "metrics": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean", "default": true },
+            "sensitive": { "type": "boolean", "default": false }
+          }
+        },
+        "refresh": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean", "default": false },
+            "sensitive": { "type": "boolean", "default": true }
+          }
+        },
+        "routes": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean", "default": false },
+            "sensitive": { "type": "boolean", "default": true }
+          }
+        },
+        "env": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean", "default": false },
+            "sensitive": { "type": "boolean", "default": true }
+          }
+        },
+        "threaddump": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean", "default": false },
+            "sensitive": { "type": "boolean", "default": true }
+          }
+        }
+      }
+    },
+    "logger": {
+      "type": "object",
+      "properties": {
+        "levels": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "enum": ["TRACE", "DEBUG", "INFO", "WARN", "ERROR", "OFF"]
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}
