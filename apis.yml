@@ -1,11 +1,18 @@
 aid: micronaut
 name: Micronaut
 description: >-
-  Micronaut is a modern JVM-based framework for building modular, easily testable microservice and serverless applications.
+  Micronaut is a modern JVM-based framework for building modular, easily
+  testable microservice and serverless applications with ahead-of-time
+  compilation and minimal memory consumption.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Microservices
+  - Java
+  - Cloud Native
+  - Serverless
+  - Frameworks
+  - JVM
 url: >-
   https://raw.githubusercontent.com/api-evangelist/micronaut/refs/heads/main/apis.yml
 created: '2026-03-26'
@@ -15,14 +22,33 @@ apis:
   - aid: micronaut:micronaut
     name: Micronaut
     description: >-
-      Micronaut is a modern JVM-based framework for building modular, easily testable microservice and serverless applications.
-    humanURL: https://github.com/api-evangelist/micronaut
+      Micronaut is a modern JVM-based framework for building modular, easily
+      testable microservice and serverless applications with ahead-of-time
+      compilation and minimal memory consumption.
+    humanURL: https://micronaut.io/
     tags:
       - Microservices
-    properties: []
+      - Java
+      - Cloud Native
+      - Serverless
+      - Frameworks
+      - JVM
+    properties:
+      - type: Documentation
+        url: https://docs.micronaut.io/latest/guide/
+      - type: Getting Started
+        url: https://guides.micronaut.io/
 common:
   - type: Website
-    url: https://github.com/api-evangelist/micronaut
+    url: https://micronaut.io/
+  - type: Documentation
+    url: https://docs.micronaut.io/latest/guide/
+  - type: Getting Started
+    url: https://guides.micronaut.io/
+  - type: GitHub Organization
+    url: https://github.com/micronaut-projects
+  - type: Blog
+    url: https://micronaut.io/blog/
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
