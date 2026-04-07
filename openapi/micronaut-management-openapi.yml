@@ -20,7 +20,7 @@ paths:
   /health:
     get:
       operationId: getHealth
-      summary: Application health
+      summary: Micronaut Application health
       description: Returns the health status of the application and its indicators (disk space, database, etc.)
       tags:
         - Health
@@ -40,7 +40,7 @@ paths:
   /info:
     get:
       operationId: getInfo
-      summary: Application info
+      summary: Micronaut Application info
       description: Returns application information from InfoSource beans
       tags:
         - Info
@@ -55,7 +55,7 @@ paths:
   /beans:
     get:
       operationId: getBeans
-      summary: List application beans
+      summary: Micronaut List application beans
       description: Returns all bean definitions in the application context
       tags:
         - Beans
@@ -74,7 +74,7 @@ paths:
   /loggers:
     get:
       operationId: getLoggers
-      summary: List all loggers
+      summary: Micronaut List all loggers
       description: Returns all logger configurations and their levels
       tags:
         - Loggers
@@ -97,7 +97,7 @@ paths:
   /loggers/{name}:
     get:
       operationId: getLogger
-      summary: Get logger level
+      summary: Micronaut Get logger level
       tags:
         - Loggers
       parameters:
@@ -115,7 +115,7 @@ paths:
                 $ref: '#/components/schemas/LoggerInfo'
     post:
       operationId: setLoggerLevel
-      summary: Set logger level
+      summary: Micronaut Set logger level
       tags:
         - Loggers
       parameters:
@@ -139,7 +139,7 @@ paths:
   /metrics:
     get:
       operationId: listMetrics
-      summary: List available metrics
+      summary: Micronaut List available metrics
       tags:
         - Metrics
       responses:
@@ -157,7 +157,7 @@ paths:
   /metrics/{name}:
     get:
       operationId: getMetric
-      summary: Get metric details
+      summary: Micronaut Get metric details
       tags:
         - Metrics
       parameters:
@@ -205,7 +205,7 @@ paths:
   /routes:
     get:
       operationId: getRoutes
-      summary: List application routes
+      summary: Micronaut List application routes
       description: Returns all URI routes in the application
       tags:
         - Routes
@@ -230,7 +230,7 @@ paths:
   /env:
     get:
       operationId: getEnvironment
-      summary: Environment properties
+      summary: Micronaut Environment properties
       description: Returns all resolved configuration properties and their sources
       tags:
         - Environment
@@ -253,7 +253,7 @@ paths:
   /threaddump:
     get:
       operationId: getThreadDump
-      summary: Thread dump
+      summary: Micronaut Thread dump
       description: Returns a thread dump of the JVM
       tags:
         - JVM
@@ -267,7 +267,7 @@ paths:
   /refresh:
     post:
       operationId: refresh
-      summary: Refresh application configuration
+      summary: Micronaut Refresh application configuration
       description: Triggers a refresh of @Refreshable beans
       tags:
         - Configuration
@@ -284,7 +284,7 @@ paths:
   /stop:
     post:
       operationId: stop
-      summary: Stop the application
+      summary: Micronaut Stop the application
       description: Gracefully stops the application (must be explicitly enabled)
       tags:
         - Lifecycle
