@@ -7,12 +7,12 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Microservices
-  - Java
   - Cloud Native
-  - Serverless
   - Frameworks
+  - Java
   - JVM
+  - Microservices
+  - Serverless
 url: >-
   https://raw.githubusercontent.com/api-evangelist/micronaut/refs/heads/main/apis.yml
 created: '2026-03-26'
@@ -27,12 +27,12 @@ apis:
       compilation and minimal memory consumption.
     humanURL: https://micronaut.io/
     tags:
-      - Microservices
-      - Java
       - Cloud Native
-      - Serverless
       - Frameworks
+      - Java
       - JVM
+      - Microservices
+      - Serverless
     properties:
       - type: Documentation
         url: https://docs.micronaut.io/latest/guide/

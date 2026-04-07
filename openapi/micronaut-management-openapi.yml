@@ -343,3 +343,14 @@ components:
           type: string
         effectiveLevel:
           type: string
+tags:
+  - name: Beans
+  - name: Configuration
+  - name: Environment
+  - name: Health
+  - name: Info
+  - name: JVM
+  - name: Lifecycle
+  - name: Loggers
+  - name: Metrics
+  - name: Routes
