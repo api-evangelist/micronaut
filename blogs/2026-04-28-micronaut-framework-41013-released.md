@@ -1,0 +1,12 @@
+---
+title: "Micronaut Framework 4.10.13 Released!"
+url: "https://micronaut.io/2026/04/28/micronaut-framework-4-10-13-released/"
+date: "Tue, 28 Apr 2026 15:20:46 +0000"
+author: "Sergio Del Amo Caballero"
+feed_url: "https://micronaut.io/blog/feed/"
+---
+<p><span>The Micronaut Foundation is excited to announce the release of Micronaut framework 4.10.13! It contains releases of </span><a class="editor-rtfLink" href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v4.10.22" rel="noopener" target="_blank"><span>Micronaut Core</span></a><span>, </span><a class="editor-rtfLink" href="https://github.com/micronaut-projects/micronaut-sourcegen/releases/tag/v1.8.5" rel="noopener" target="_blank"><span>Micronaut Sourcegen</span></a><span>, and </span><a class="editor-rtfLink" href="https://github.com/micronaut-projects/micronaut-sql/releases/tag/v6.3.4" rel="noopener" target="_blank"><span>Micronaut SQL</span></a><span>.</span></p>
+<p><span>The latest version of </span><a class="editor-rtfLink" href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v4.10.22" rel="noopener" target="_blank"><span>Micronaut Core</span></a><span>, included in this release, contains fixes for two security advisories related to unbounded caches </span><a class="editor-rtfLink" href="https://github.com/micronaut-projects/micronaut-core/security/advisories/GHSA-8hjv-92q9-g4xj" rel="noopener" target="_blank"><span>in TimeConverterRegistrar</span></a><span> and  </span><a class="editor-rtfLink" href="https://github.com/micronaut-projects/micronaut-core/security/advisories/GHSA-3rfq-4wpf-qqw3" rel="noopener" target="_blank"><span>ResourceBundleMessageSource.</span></a></p>
+<p><strong><span>We strongly recommend that users update to Micronaut 4.10.13. </span></strong><span>If you are still using Micronaut 3, update to </span><a class="editor-rtfLink" href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v3.10.6" rel="noopener" target="_blank"><span>Micronaut 3.10.6</span></a><span>, which includes the necessary patches.</span></p>
+<p><span>Please feel free to </span><a class="editor-rtfLink" href="https://micronaut.io/support/" rel="noopener" target="_blank"><span>reach out to us</span></a><span> if you need any assistance.</span></p>
+<p>The post <a href="https://micronaut.io/2026/04/28/micronaut-framework-4-10-13-released/">Micronaut Framework 4.10.13 Released!</a> appeared first on <a href="https://micronaut.io">Micronaut Framework</a>.</p>
