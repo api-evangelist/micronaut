@@ -1,0 +1,479 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Micronaut Management Endpoints API
+  description: Micronaut Management provides built-in endpoints for monitoring and managing Micronaut applications. Endpoints
+    include health checks, application info, beans introspection, loggers management, metrics, routes, environment, and thread
+    dumps.
+  tags:
+  - Micronaut
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: micronaut
+    baseUri: http://localhost:8080
+    description: Micronaut Management Endpoints API HTTP API.
+    resources:
+    - name: health
+      path: /health
+      operations:
+      - name: gethealth
+        method: GET
+        description: Micronaut Application health
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: info
+      path: /info
+      operations:
+      - name: getinfo
+        method: GET
+        description: Micronaut Application info
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: beans
+      path: /beans
+      operations:
+      - name: getbeans
+        method: GET
+        description: Micronaut List application beans
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: loggers
+      path: /loggers
+      operations:
+      - name: getloggers
+        method: GET
+        description: Micronaut List all loggers
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: loggers-name
+      path: /loggers/{name}
+      operations:
+      - name: getlogger
+        method: GET
+        description: Micronaut Get logger level
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: setloggerlevel
+        method: POST
+        description: Micronaut Set logger level
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: metrics
+      path: /metrics
+      operations:
+      - name: listmetrics
+        method: GET
+        description: Micronaut List available metrics
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: metrics-name
+      path: /metrics/{name}
+      operations:
+      - name: getmetric
+        method: GET
+        description: Micronaut Get metric details
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: tag
+          in: query
+          type: array
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: routes
+      path: /routes
+      operations:
+      - name: getroutes
+        method: GET
+        description: Micronaut List application routes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: env
+      path: /env
+      operations:
+      - name: getenvironment
+        method: GET
+        description: Micronaut Environment properties
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: threaddump
+      path: /threaddump
+      operations:
+      - name: getthreaddump
+        method: GET
+        description: Micronaut Thread dump
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: refresh
+      path: /refresh
+      operations:
+      - name: refresh
+        method: POST
+        description: Micronaut Refresh application configuration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: stop
+      path: /stop
+      operations:
+      - name: stop
+        method: POST
+        description: Micronaut Stop the application
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: micronaut-rest
+    description: REST adapter for Micronaut Management Endpoints API.
+    resources:
+    - path: /health
+      name: gethealth
+      operations:
+      - method: GET
+        name: gethealth
+        description: Micronaut Application health
+        call: micronaut.gethealth
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /info
+      name: getinfo
+      operations:
+      - method: GET
+        name: getinfo
+        description: Micronaut Application info
+        call: micronaut.getinfo
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /beans
+      name: getbeans
+      operations:
+      - method: GET
+        name: getbeans
+        description: Micronaut List application beans
+        call: micronaut.getbeans
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /loggers
+      name: getloggers
+      operations:
+      - method: GET
+        name: getloggers
+        description: Micronaut List all loggers
+        call: micronaut.getloggers
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /loggers/{name}
+      name: getlogger
+      operations:
+      - method: GET
+        name: getlogger
+        description: Micronaut Get logger level
+        call: micronaut.getlogger
+        with:
+          name: rest.name
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /loggers/{name}
+      name: setloggerlevel
+      operations:
+      - method: POST
+        name: setloggerlevel
+        description: Micronaut Set logger level
+        call: micronaut.setloggerlevel
+        with:
+          name: rest.name
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /metrics
+      name: listmetrics
+      operations:
+      - method: GET
+        name: listmetrics
+        description: Micronaut List available metrics
+        call: micronaut.listmetrics
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /metrics/{name}
+      name: getmetric
+      operations:
+      - method: GET
+        name: getmetric
+        description: Micronaut Get metric details
+        call: micronaut.getmetric
+        with:
+          name: rest.name
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /routes
+      name: getroutes
+      operations:
+      - method: GET
+        name: getroutes
+        description: Micronaut List application routes
+        call: micronaut.getroutes
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /env
+      name: getenvironment
+      operations:
+      - method: GET
+        name: getenvironment
+        description: Micronaut Environment properties
+        call: micronaut.getenvironment
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /threaddump
+      name: getthreaddump
+      operations:
+      - method: GET
+        name: getthreaddump
+        description: Micronaut Thread dump
+        call: micronaut.getthreaddump
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /refresh
+      name: refresh
+      operations:
+      - method: POST
+        name: refresh
+        description: Micronaut Refresh application configuration
+        call: micronaut.refresh
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /stop
+      name: stop
+      operations:
+      - method: POST
+        name: stop
+        description: Micronaut Stop the application
+        call: micronaut.stop
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: micronaut-mcp
+    transport: http
+    description: MCP adapter for Micronaut Management Endpoints API for AI agent use.
+    tools:
+    - name: gethealth
+      description: Micronaut Application health
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: micronaut.gethealth
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getinfo
+      description: Micronaut Application info
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: micronaut.getinfo
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getbeans
+      description: Micronaut List application beans
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: micronaut.getbeans
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getloggers
+      description: Micronaut List all loggers
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: micronaut.getloggers
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getlogger
+      description: Micronaut Get logger level
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: micronaut.getlogger
+      with:
+        name: tools.name
+      inputParameters:
+      - name: name
+        type: string
+        description: name
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: setloggerlevel
+      description: Micronaut Set logger level
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: micronaut.setloggerlevel
+      with:
+        name: tools.name
+      inputParameters:
+      - name: name
+        type: string
+        description: name
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listmetrics
+      description: Micronaut List available metrics
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: micronaut.listmetrics
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getmetric
+      description: Micronaut Get metric details
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: micronaut.getmetric
+      with:
+        name: tools.name
+        tag: tools.tag
+      inputParameters:
+      - name: name
+        type: string
+        description: name
+        required: true
+      - name: tag
+        type: array
+        description: tag
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getroutes
+      description: Micronaut List application routes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: micronaut.getroutes
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getenvironment
+      description: Micronaut Environment properties
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: micronaut.getenvironment
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getthreaddump
+      description: Micronaut Thread dump
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: micronaut.getthreaddump
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: refresh
+      description: Micronaut Refresh application configuration
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: micronaut.refresh
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: stop
+      description: Micronaut Stop the application
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: micronaut.stop
+      outputParameters:
+      - type: object
+        mapping: $.
