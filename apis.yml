@@ -36,7 +36,7 @@ apis:
     properties:
       - type: Documentation
         url: https://docs.micronaut.io/latest/guide/
-      - type: Getting Started
+      - type: GettingStarted
         url: https://guides.micronaut.io/
       - type: JSONSchema
         url: json-schema/micronaut-application-config.json
@@ -47,9 +47,9 @@ common:
     url: https://micronaut.io/
   - type: Documentation
     url: https://docs.micronaut.io/latest/guide/
-  - type: Getting Started
+  - type: GettingStarted
     url: https://guides.micronaut.io/
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/micronaut-projects
   - type: Blog
     url: https://micronaut.io/blog/
