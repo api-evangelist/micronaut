@@ -1,61 +1,78 @@
 aid: micronaut
 name: Micronaut
-description: >-
-  Micronaut is a modern JVM-based framework for building modular, easily
-  testable microservice and serverless applications with ahead-of-time
-  compilation and minimal memory consumption.
+description: Micronaut is a modern JVM-based framework for building modular, easily testable microservice and serverless applications
+  with ahead-of-time compilation and minimal memory consumption.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
+- Cloud Native
+- Frameworks
+- Java
+- JVM
+- Microservices
+- Serverless
+url: https://raw.githubusercontent.com/api-evangelist/micronaut/refs/heads/main/apis.yml
+created: '2026-03-26'
+modified: '2026-05-19'
+specificationVersion: '0.19'
+apis:
+- aid: micronaut:micronaut
+  name: Micronaut
+  description: Micronaut is a modern JVM-based framework for building modular, easily testable microservice and serverless
+    applications with ahead-of-time compilation and minimal memory consumption.
+  humanURL: https://micronaut.io/
+  tags:
   - Cloud Native
   - Frameworks
   - Java
   - JVM
   - Microservices
   - Serverless
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/micronaut/refs/heads/main/apis.yml
-created: '2026-03-26'
-modified: '2026-05-19'
-specificationVersion: '0.19'
-apis:
-  - aid: micronaut:micronaut
-    name: Micronaut
-    description: >-
-      Micronaut is a modern JVM-based framework for building modular, easily
-      testable microservice and serverless applications with ahead-of-time
-      compilation and minimal memory consumption.
-    humanURL: https://micronaut.io/
-    tags:
-      - Cloud Native
-      - Frameworks
-      - Java
-      - JVM
-      - Microservices
-      - Serverless
-    properties:
-      - type: Documentation
-        url: https://docs.micronaut.io/latest/guide/
-      - type: GettingStarted
-        url: https://guides.micronaut.io/
-      - type: JSONSchema
-        url: json-schema/micronaut-application-config.json
-      - type: OpenAPI
-        url: openapi/micronaut-management-openapi.yml
-common:
-  - type: Website
-    url: https://micronaut.io/
+  properties:
   - type: Documentation
     url: https://docs.micronaut.io/latest/guide/
   - type: GettingStarted
     url: https://guides.micronaut.io/
-  - type: GitHubOrganization
-    url: https://github.com/micronaut-projects
-  - type: Blog
-    url: https://micronaut.io/blog/
-  - name: MCP Server
-    url: https://github.com/micronaut-projects/micronaut-mcp
-    type: MCPServer
+  - type: JSONSchema
+    url: json-schema/micronaut-application-config.json
+  - type: OpenAPI
+    url: openapi/micronaut-management-openapi.yml
+  - type: NaftikoCapability
+    url: capabilities/management-beans.yaml
+  - type: NaftikoCapability
+    url: capabilities/management-configuration.yaml
+  - type: NaftikoCapability
+    url: capabilities/management-environment.yaml
+  - type: NaftikoCapability
+    url: capabilities/management-health.yaml
+  - type: NaftikoCapability
+    url: capabilities/management-info.yaml
+  - type: NaftikoCapability
+    url: capabilities/management-jvm.yaml
+  - type: NaftikoCapability
+    url: capabilities/management-lifecycle.yaml
+  - type: NaftikoCapability
+    url: capabilities/management-loggers.yaml
+  - type: NaftikoCapability
+    url: capabilities/management-metrics.yaml
+  - type: NaftikoCapability
+    url: capabilities/management-routes.yaml
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/showcase/micronaut
+- type: Website
+  url: https://micronaut.io/
+- type: Documentation
+  url: https://docs.micronaut.io/latest/guide/
+- type: GettingStarted
+  url: https://guides.micronaut.io/
+- type: GitHubOrganization
+  url: https://github.com/micronaut-projects
+- type: Blog
+  url: https://micronaut.io/blog/
+- name: MCP Server
+  url: https://github.com/micronaut-projects/micronaut-mcp
+  type: MCPServer
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com

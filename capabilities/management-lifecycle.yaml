@@ -1,0 +1,67 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Micronaut Management Endpoints API — Lifecycle
+  description: 'Micronaut Management Endpoints API — Lifecycle. 1 operations. Lead operation: Micronaut Stop the application.
+    Self-contained Naftiko capability covering one Micronaut business surface.'
+  tags:
+  - Micronaut
+  - Lifecycle
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICRONAUT_API_KEY: MICRONAUT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: management-lifecycle
+    baseUri: http://localhost:8080
+    description: Micronaut Management Endpoints API — Lifecycle business capability. Self-contained, no shared references.
+    resources:
+    - name: stop
+      path: /stop
+      operations:
+      - name: stop
+        method: POST
+        description: Micronaut Stop the application
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: management-lifecycle-rest
+    port: 8080
+    description: REST adapter for Micronaut Management Endpoints API — Lifecycle. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/stop
+      name: stop
+      description: REST surface for stop.
+      operations:
+      - method: POST
+        name: stop
+        description: Micronaut Stop the application
+        call: management-lifecycle.stop
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: management-lifecycle-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Micronaut Management Endpoints API — Lifecycle. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: micronaut-stop-application
+      description: Micronaut Stop the application
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: management-lifecycle.stop
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,67 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Micronaut Management Endpoints API — Health
+  description: 'Micronaut Management Endpoints API — Health. 1 operations. Lead operation: Micronaut Application health. Self-contained
+    Naftiko capability covering one Micronaut business surface.'
+  tags:
+  - Micronaut
+  - Health
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICRONAUT_API_KEY: MICRONAUT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: management-health
+    baseUri: http://localhost:8080
+    description: Micronaut Management Endpoints API — Health business capability. Self-contained, no shared references.
+    resources:
+    - name: health
+      path: /health
+      operations:
+      - name: gethealth
+        method: GET
+        description: Micronaut Application health
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: management-health-rest
+    port: 8080
+    description: REST adapter for Micronaut Management Endpoints API — Health. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/health
+      name: health
+      description: REST surface for health.
+      operations:
+      - method: GET
+        name: gethealth
+        description: Micronaut Application health
+        call: management-health.gethealth
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: management-health-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Micronaut Management Endpoints API — Health. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: micronaut-application-health
+      description: Micronaut Application health
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: management-health.gethealth
+      outputParameters:
+      - type: object
+        mapping: $.

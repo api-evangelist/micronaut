@@ -1,0 +1,67 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Micronaut Management Endpoints API — JVM
+  description: 'Micronaut Management Endpoints API — JVM. 1 operations. Lead operation: Micronaut Thread dump. Self-contained
+    Naftiko capability covering one Micronaut business surface.'
+  tags:
+  - Micronaut
+  - JVM
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICRONAUT_API_KEY: MICRONAUT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: management-jvm
+    baseUri: http://localhost:8080
+    description: Micronaut Management Endpoints API — JVM business capability. Self-contained, no shared references.
+    resources:
+    - name: threaddump
+      path: /threaddump
+      operations:
+      - name: getthreaddump
+        method: GET
+        description: Micronaut Thread dump
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: management-jvm-rest
+    port: 8080
+    description: REST adapter for Micronaut Management Endpoints API — JVM. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/threaddump
+      name: threaddump
+      description: REST surface for threaddump.
+      operations:
+      - method: GET
+        name: getthreaddump
+        description: Micronaut Thread dump
+        call: management-jvm.getthreaddump
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: management-jvm-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Micronaut Management Endpoints API — JVM. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: micronaut-thread-dump
+      description: Micronaut Thread dump
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: management-jvm.getthreaddump
+      outputParameters:
+      - type: object
+        mapping: $.

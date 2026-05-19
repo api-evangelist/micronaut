@@ -1,0 +1,67 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Micronaut Management Endpoints API — Beans
+  description: 'Micronaut Management Endpoints API — Beans. 1 operations. Lead operation: Micronaut List application beans.
+    Self-contained Naftiko capability covering one Micronaut business surface.'
+  tags:
+  - Micronaut
+  - Beans
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICRONAUT_API_KEY: MICRONAUT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: management-beans
+    baseUri: http://localhost:8080
+    description: Micronaut Management Endpoints API — Beans business capability. Self-contained, no shared references.
+    resources:
+    - name: beans
+      path: /beans
+      operations:
+      - name: getbeans
+        method: GET
+        description: Micronaut List application beans
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: management-beans-rest
+    port: 8080
+    description: REST adapter for Micronaut Management Endpoints API — Beans. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/beans
+      name: beans
+      description: REST surface for beans.
+      operations:
+      - method: GET
+        name: getbeans
+        description: Micronaut List application beans
+        call: management-beans.getbeans
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: management-beans-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Micronaut Management Endpoints API — Beans. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: micronaut-list-application-beans
+      description: Micronaut List application beans
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: management-beans.getbeans
+      outputParameters:
+      - type: object
+        mapping: $.

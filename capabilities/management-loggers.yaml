@@ -1,0 +1,149 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Micronaut Management Endpoints API — Loggers
+  description: 'Micronaut Management Endpoints API — Loggers. 3 operations. Lead operation: Micronaut List all loggers. Self-contained
+    Naftiko capability covering one Micronaut business surface.'
+  tags:
+  - Micronaut
+  - Loggers
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICRONAUT_API_KEY: MICRONAUT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: management-loggers
+    baseUri: http://localhost:8080
+    description: Micronaut Management Endpoints API — Loggers business capability. Self-contained, no shared references.
+    resources:
+    - name: loggers
+      path: /loggers
+      operations:
+      - name: getloggers
+        method: GET
+        description: Micronaut List all loggers
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: loggers-name
+      path: /loggers/{name}
+      operations:
+      - name: getlogger
+        method: GET
+        description: Micronaut Get logger level
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+      - name: setloggerlevel
+        method: POST
+        description: Micronaut Set logger level
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: management-loggers-rest
+    port: 8080
+    description: REST adapter for Micronaut Management Endpoints API — Loggers. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/loggers
+      name: loggers
+      description: REST surface for loggers.
+      operations:
+      - method: GET
+        name: getloggers
+        description: Micronaut List all loggers
+        call: management-loggers.getloggers
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/loggers/{name}
+      name: loggers-name
+      description: REST surface for loggers-name.
+      operations:
+      - method: GET
+        name: getlogger
+        description: Micronaut Get logger level
+        call: management-loggers.getlogger
+        with:
+          name: rest.name
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: setloggerlevel
+        description: Micronaut Set logger level
+        call: management-loggers.setloggerlevel
+        with:
+          name: rest.name
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: management-loggers-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Micronaut Management Endpoints API — Loggers. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: micronaut-list-all-loggers
+      description: Micronaut List all loggers
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: management-loggers.getloggers
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: micronaut-get-logger-level
+      description: Micronaut Get logger level
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: management-loggers.getlogger
+      with:
+        name: tools.name
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: micronaut-set-logger-level
+      description: Micronaut Set logger level
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: management-loggers.setloggerlevel
+      with:
+        name: tools.name
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
