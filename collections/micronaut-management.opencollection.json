@@ -1,0 +1,263 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Micronaut Management Endpoints API",
+    "version": "4.7.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Health",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Micronaut Application health",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/health"
+          },
+          "docs": "Returns the health status of the application and its indicators (disk space, database, etc.)"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Info",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Micronaut Application info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/info"
+          },
+          "docs": "Returns application information from InfoSource beans"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Beans",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Micronaut List application beans",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/beans"
+          },
+          "docs": "Returns all bean definitions in the application context"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Loggers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Micronaut List all loggers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/loggers"
+          },
+          "docs": "Returns all logger configurations and their levels"
+        },
+        {
+          "info": {
+            "name": "Micronaut Get logger level",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/loggers/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Micronaut Get logger level"
+        },
+        {
+          "info": {
+            "name": "Micronaut Set logger level",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8080/loggers/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Micronaut Set logger level"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Metrics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Micronaut List available metrics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/metrics"
+          },
+          "docs": "Micronaut List available metrics"
+        },
+        {
+          "info": {
+            "name": "Micronaut Get metric details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/metrics/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "tag",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Micronaut Get metric details"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Routes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Micronaut List application routes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/routes"
+          },
+          "docs": "Returns all URI routes in the application"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Environment",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Micronaut Environment properties",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/env"
+          },
+          "docs": "Returns all resolved configuration properties and their sources"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "JVM",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Micronaut Thread dump",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/threaddump"
+          },
+          "docs": "Returns a thread dump of the JVM"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Configuration",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Micronaut Refresh application configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8080/refresh"
+          },
+          "docs": "Triggers a refresh of @Refreshable beans"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Lifecycle",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Micronaut Stop the application",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8080/stop"
+          },
+          "docs": "Gracefully stops the application (must be explicitly enabled)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
