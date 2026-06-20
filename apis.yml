@@ -4,7 +4,7 @@ description: >-
   Micronaut is a modern JVM-based framework for building modular, easily testable microservice and serverless
   applications with ahead-of-time compilation and minimal memory consumption.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Cloud Native
   - Frameworks
