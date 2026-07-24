@@ -1,0 +1,31 @@
+openapi: 3.0.3
+info:
+  title: Micronaut Management Endpoints Beans JVM API
+  description: Micronaut Management provides built-in endpoints for monitoring and managing Micronaut applications. Endpoints include health checks, application info, beans introspection, loggers management, metrics, routes, environment, and thread dumps.
+  version: 4.7.0
+  contact:
+    name: Micronaut Team
+    url: https://micronaut.io/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: http://localhost:8080
+  description: Default Micronaut server
+tags:
+- name: JVM
+paths:
+  /threaddump:
+    get:
+      operationId: getThreadDump
+      summary: Micronaut Thread dump
+      description: Returns a thread dump of the JVM
+      tags:
+      - JVM
+      responses:
+        '200':
+          description: Thread dump
+          content:
+            application/json:
+              schema:
+                type: object

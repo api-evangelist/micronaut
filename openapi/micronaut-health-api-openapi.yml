@@ -1,0 +1,63 @@
+openapi: 3.0.3
+info:
+  title: Micronaut Management Endpoints Beans Health API
+  description: Micronaut Management provides built-in endpoints for monitoring and managing Micronaut applications. Endpoints include health checks, application info, beans introspection, loggers management, metrics, routes, environment, and thread dumps.
+  version: 4.7.0
+  contact:
+    name: Micronaut Team
+    url: https://micronaut.io/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: http://localhost:8080
+  description: Default Micronaut server
+tags:
+- name: Health
+paths:
+  /health:
+    get:
+      operationId: getHealth
+      summary: Micronaut Application health
+      description: Returns the health status of the application and its indicators (disk space, database, etc.)
+      tags:
+      - Health
+      responses:
+        '200':
+          description: Application is healthy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResult'
+        '503':
+          description: Application is unhealthy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResult'
+components:
+  schemas:
+    HealthResult:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Application name
+        status:
+          type: string
+          enum:
+          - UP
+          - DOWN
+          - UNKNOWN
+        details:
+          type: object
+          additionalProperties:
+            type: object
+            properties:
+              name:
+                type: string
+              status:
+                type: string
+              details:
+                type: object
+                additionalProperties: true

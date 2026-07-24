@@ -1,0 +1,53 @@
+openapi: 3.0.3
+info:
+  title: Micronaut Management Endpoints Beans API
+  description: Micronaut Management provides built-in endpoints for monitoring and managing Micronaut applications. Endpoints include health checks, application info, beans introspection, loggers management, metrics, routes, environment, and thread dumps.
+  version: 4.7.0
+  contact:
+    name: Micronaut Team
+    url: https://micronaut.io/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: http://localhost:8080
+  description: Default Micronaut server
+tags:
+- name: Beans
+paths:
+  /beans:
+    get:
+      operationId: getBeans
+      summary: Micronaut List application beans
+      description: Returns all bean definitions in the application context
+      tags:
+      - Beans
+      responses:
+        '200':
+          description: Bean definitions
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  beans:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/BeanInfo'
+components:
+  schemas:
+    BeanInfo:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Bean type (fully qualified class name)
+        scope:
+          type: string
+          description: Bean scope (singleton, prototype, etc.)
+        qualifier:
+          type: string
+        dependencies:
+          type: array
+          items:
+            type: string

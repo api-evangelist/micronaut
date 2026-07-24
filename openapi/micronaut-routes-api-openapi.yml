@@ -1,0 +1,42 @@
+openapi: 3.0.3
+info:
+  title: Micronaut Management Endpoints Beans Routes API
+  description: Micronaut Management provides built-in endpoints for monitoring and managing Micronaut applications. Endpoints include health checks, application info, beans introspection, loggers management, metrics, routes, environment, and thread dumps.
+  version: 4.7.0
+  contact:
+    name: Micronaut Team
+    url: https://micronaut.io/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: http://localhost:8080
+  description: Default Micronaut server
+tags:
+- name: Routes
+paths:
+  /routes:
+    get:
+      operationId: getRoutes
+      summary: Micronaut List application routes
+      description: Returns all URI routes in the application
+      tags:
+      - Routes
+      responses:
+        '200':
+          description: Route definitions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    method:
+                      type: string
+                    uri:
+                      type: string
+                    produces:
+                      type: array
+                      items:
+                        type: string

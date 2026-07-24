@@ -1,0 +1,34 @@
+openapi: 3.0.3
+info:
+  title: Micronaut Management Endpoints Beans Lifecycle API
+  description: Micronaut Management provides built-in endpoints for monitoring and managing Micronaut applications. Endpoints include health checks, application info, beans introspection, loggers management, metrics, routes, environment, and thread dumps.
+  version: 4.7.0
+  contact:
+    name: Micronaut Team
+    url: https://micronaut.io/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: http://localhost:8080
+  description: Default Micronaut server
+tags:
+- name: Lifecycle
+paths:
+  /stop:
+    post:
+      operationId: stop
+      summary: Micronaut Stop the application
+      description: Gracefully stops the application (must be explicitly enabled)
+      tags:
+      - Lifecycle
+      responses:
+        '200':
+          description: Application stopping
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
