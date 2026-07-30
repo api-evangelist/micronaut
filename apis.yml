@@ -4,7 +4,19 @@ description: >-
   Micronaut is a modern JVM-based framework for building modular, easily testable microservice and serverless
   applications with ahead-of-time compilation and minimal memory consumption.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/micronaut.png
 tags:
   - Cloud Native
   - Frameworks
@@ -17,28 +29,156 @@ created: '2026-03-26'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: micronaut:micronaut
-    name: Micronaut
-    description: >-
-      Micronaut is a modern JVM-based framework for building modular, easily testable microservice and serverless
-      applications with ahead-of-time compilation and minimal memory consumption.
-    humanURL: https://micronaut.io/
-    tags:
-      - Cloud Native
-      - Frameworks
-      - Java
-      - JVM
-      - Microservices
-      - Serverless
-    properties:
-      - type: Documentation
-        url: https://docs.micronaut.io/latest/guide/
-      - type: GettingStarted
-        url: https://guides.micronaut.io/
-      - type: JSONSchema
-        url: json-schema/micronaut-application-config.json
-      - type: OpenAPI
-        url: openapi/micronaut-management-openapi.yml
+- aid: micronaut:micronaut-beans-api
+  name: Micronaut Beans API
+  description: The Beans API from Micronaut — 1 operation(s) for beans.
+  humanURL: https://micronaut.io/
+  tags:
+  - Beans
+  properties:
+  - type: OpenAPI
+    url: openapi/micronaut-beans-api-openapi.yml
+  - type: Documentation
+    url: https://docs.micronaut.io/latest/guide/
+  - type: GettingStarted
+    url: https://guides.micronaut.io/
+  - type: JSONSchema
+    url: json-schema/micronaut-application-config.json
+- aid: micronaut:micronaut-configuration-api
+  name: Micronaut Configuration API
+  description: The Configuration API from Micronaut — 1 operation(s) for configuration.
+  humanURL: https://micronaut.io/
+  tags:
+  - Configuration
+  properties:
+  - type: OpenAPI
+    url: openapi/micronaut-configuration-api-openapi.yml
+  - type: Documentation
+    url: https://docs.micronaut.io/latest/guide/
+  - type: GettingStarted
+    url: https://guides.micronaut.io/
+  - type: JSONSchema
+    url: json-schema/micronaut-application-config.json
+- aid: micronaut:micronaut-environment-api
+  name: Micronaut Environment API
+  description: The Environment API from Micronaut — 1 operation(s) for environment.
+  humanURL: https://micronaut.io/
+  tags:
+  - Environment
+  properties:
+  - type: OpenAPI
+    url: openapi/micronaut-environment-api-openapi.yml
+  - type: Documentation
+    url: https://docs.micronaut.io/latest/guide/
+  - type: GettingStarted
+    url: https://guides.micronaut.io/
+  - type: JSONSchema
+    url: json-schema/micronaut-application-config.json
+- aid: micronaut:micronaut-health-api
+  name: Micronaut Health API
+  description: The Health API from Micronaut — 1 operation(s) for health.
+  humanURL: https://micronaut.io/
+  tags:
+  - Health
+  properties:
+  - type: OpenAPI
+    url: openapi/micronaut-health-api-openapi.yml
+  - type: Documentation
+    url: https://docs.micronaut.io/latest/guide/
+  - type: GettingStarted
+    url: https://guides.micronaut.io/
+  - type: JSONSchema
+    url: json-schema/micronaut-application-config.json
+- aid: micronaut:micronaut-info-api
+  name: Micronaut Info API
+  description: The Info API from Micronaut — 1 operation(s) for info.
+  humanURL: https://micronaut.io/
+  tags:
+  - Info
+  properties:
+  - type: OpenAPI
+    url: openapi/micronaut-info-api-openapi.yml
+  - type: Documentation
+    url: https://docs.micronaut.io/latest/guide/
+  - type: GettingStarted
+    url: https://guides.micronaut.io/
+  - type: JSONSchema
+    url: json-schema/micronaut-application-config.json
+- aid: micronaut:micronaut-jvm-api
+  name: Micronaut JVM API
+  description: The JVM API from Micronaut — 1 operation(s) for jvm.
+  humanURL: https://micronaut.io/
+  tags:
+  - JVM
+  properties:
+  - type: OpenAPI
+    url: openapi/micronaut-jvm-api-openapi.yml
+  - type: Documentation
+    url: https://docs.micronaut.io/latest/guide/
+  - type: GettingStarted
+    url: https://guides.micronaut.io/
+  - type: JSONSchema
+    url: json-schema/micronaut-application-config.json
+- aid: micronaut:micronaut-lifecycle-api
+  name: Micronaut Lifecycle API
+  description: The Lifecycle API from Micronaut — 1 operation(s) for lifecycle.
+  humanURL: https://micronaut.io/
+  tags:
+  - Lifecycle
+  properties:
+  - type: OpenAPI
+    url: openapi/micronaut-lifecycle-api-openapi.yml
+  - type: Documentation
+    url: https://docs.micronaut.io/latest/guide/
+  - type: GettingStarted
+    url: https://guides.micronaut.io/
+  - type: JSONSchema
+    url: json-schema/micronaut-application-config.json
+- aid: micronaut:micronaut-loggers-api
+  name: Micronaut Loggers API
+  description: The Loggers API from Micronaut — 2 operation(s) for loggers.
+  humanURL: https://micronaut.io/
+  tags:
+  - Loggers
+  properties:
+  - type: OpenAPI
+    url: openapi/micronaut-loggers-api-openapi.yml
+  - type: Documentation
+    url: https://docs.micronaut.io/latest/guide/
+  - type: GettingStarted
+    url: https://guides.micronaut.io/
+  - type: JSONSchema
+    url: json-schema/micronaut-application-config.json
+- aid: micronaut:micronaut-metrics-api
+  name: Micronaut Metrics API
+  description: The Metrics API from Micronaut — 2 operation(s) for metrics.
+  humanURL: https://micronaut.io/
+  tags:
+  - Metrics
+  properties:
+  - type: OpenAPI
+    url: openapi/micronaut-metrics-api-openapi.yml
+  - type: Documentation
+    url: https://docs.micronaut.io/latest/guide/
+  - type: GettingStarted
+    url: https://guides.micronaut.io/
+  - type: JSONSchema
+    url: json-schema/micronaut-application-config.json
+- aid: micronaut:micronaut-routes-api
+  name: Micronaut Routes API
+  description: The Routes API from Micronaut — 1 operation(s) for routes.
+  humanURL: https://micronaut.io/
+  tags:
+  - Routes
+  properties:
+  - type: OpenAPI
+    url: openapi/micronaut-routes-api-openapi.yml
+  - type: Documentation
+    url: https://docs.micronaut.io/latest/guide/
+  - type: GettingStarted
+    url: https://guides.micronaut.io/
+  - type: JSONSchema
+    url: json-schema/micronaut-application-config.json
 common:
   - type: AgenticAccess
     url: agentic-access/micronaut-agentic-access.yml
