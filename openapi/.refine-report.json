@@ -1,0 +1,32 @@
+{
+  "provider": "micronaut",
+  "sources": [
+    "micronaut-beans-api-openapi.yml",
+    "micronaut-configuration-api-openapi.yml",
+    "micronaut-environment-api-openapi.yml",
+    "micronaut-health-api-openapi.yml",
+    "micronaut-info-api-openapi.yml",
+    "micronaut-jvm-api-openapi.yml",
+    "micronaut-lifecycle-api-openapi.yml",
+    "micronaut-loggers-api-openapi.yml",
+    "micronaut-metrics-api-openapi.yml",
+    "micronaut-routes-api-openapi.yml"
+  ],
+  "outputs": [
+    "micronaut-beans-api-openapi.yml",
+    "micronaut-configuration-api-openapi.yml",
+    "micronaut-environment-api-openapi.yml",
+    "micronaut-health-api-openapi.yml",
+    "micronaut-info-api-openapi.yml",
+    "micronaut-jvm-api-openapi.yml",
+    "micronaut-lifecycle-api-openapi.yml",
+    "micronaut-loggers-api-openapi.yml",
+    "micronaut-metrics-api-openapi.yml",
+    "micronaut-routes-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
