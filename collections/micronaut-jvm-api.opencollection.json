@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Micronaut Management Endpoints Beans JVM API",
+    "version": "4.7.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "JVM",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Micronaut Thread dump",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/threaddump"
+          },
+          "docs": "Returns a thread dump of the JVM"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

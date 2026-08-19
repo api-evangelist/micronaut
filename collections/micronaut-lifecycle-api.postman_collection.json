@@ -1,0 +1,102 @@
+{
+  "item": [
+    {
+      "id": "7b8f70bb-a1fd-48ba-a181-de8504dcf233",
+      "name": "Lifecycle",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1fb8db1e-d960-413f-8ffe-619c9f15f4b6",
+          "name": "Micronaut Stop the application",
+          "request": {
+            "name": "Micronaut Stop the application",
+            "description": {
+              "content": "Gracefully stops the application (must be explicitly enabled)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "stop"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f0079597-d2a1-48c5-af92-7790ccb23945",
+              "name": "Application stopping",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:8080",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e3e1f8bf-2785-4a7a-a1d5-cffaee1b6de4",
+    "name": "Micronaut Management Endpoints Beans Lifecycle API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Micronaut Management provides built-in endpoints for monitoring and managing Micronaut applications. Endpoints include health checks, application info, beans introspection, loggers management, metrics, routes, environment, and thread dumps.\n\nContact Support:\n Name: Micronaut Team",
+      "type": "text/plain"
+    }
+  }
+}

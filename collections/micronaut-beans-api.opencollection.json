@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Micronaut Management Endpoints Beans API",
+    "version": "4.7.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Beans",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Micronaut List application beans",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/beans"
+          },
+          "docs": "Returns all bean definitions in the application context"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

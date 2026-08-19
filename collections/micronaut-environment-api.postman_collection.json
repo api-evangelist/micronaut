@@ -1,0 +1,102 @@
+{
+  "item": [
+    {
+      "id": "36943b2b-4549-479e-8d76-15cad6a57913",
+      "name": "Environment",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "375f3c99-2c34-4f8b-b2f9-6e4c7543880f",
+          "name": "Micronaut Environment properties",
+          "request": {
+            "name": "Micronaut Environment properties",
+            "description": {
+              "content": "Returns all resolved configuration properties and their sources",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "env"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b81491e0-b16a-4641-b435-f0504dcd0e2d",
+              "name": "Environment information",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "env"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"activeEnvironments\": [\n    \"string\",\n    \"string\"\n  ],\n  \"packages\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:8080",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "817acdbe-c86d-4337-8956-757915c95ecd",
+    "name": "Micronaut Management Endpoints Beans Environment API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Micronaut Management provides built-in endpoints for monitoring and managing Micronaut applications. Endpoints include health checks, application info, beans introspection, loggers management, metrics, routes, environment, and thread dumps.\n\nContact Support:\n Name: Micronaut Team",
+      "type": "text/plain"
+    }
+  }
+}

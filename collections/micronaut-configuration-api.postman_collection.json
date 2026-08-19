@@ -1,0 +1,102 @@
+{
+  "item": [
+    {
+      "id": "753a9a0e-1b83-4e92-a6d0-69aeab528c8e",
+      "name": "Configuration",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6ff67df7-dc91-478d-ac99-ae66cf987c12",
+          "name": "Micronaut Refresh application configuration",
+          "request": {
+            "name": "Micronaut Refresh application configuration",
+            "description": {
+              "content": "Triggers a refresh of @Refreshable beans",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "refresh"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e32c44f5-977d-47ba-8772-3a2ffa31bad9",
+              "name": "Configuration refreshed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "refresh"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  \"string\",\n  \"string\"\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:8080",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c8f40dbc-ec2f-46be-88c0-5a3120bf7326",
+    "name": "Micronaut Management Endpoints Beans Configuration API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Micronaut Management provides built-in endpoints for monitoring and managing Micronaut applications. Endpoints include health checks, application info, beans introspection, loggers management, metrics, routes, environment, and thread dumps.\n\nContact Support:\n Name: Micronaut Team",
+      "type": "text/plain"
+    }
+  }
+}

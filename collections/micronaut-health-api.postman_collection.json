@@ -1,0 +1,137 @@
+{
+  "item": [
+    {
+      "id": "6b2e4b8d-8d73-4616-81c1-36942134f1a6",
+      "name": "Health",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f18049b0-6784-4b18-9ba6-8691e0d6b13d",
+          "name": "Micronaut Application health",
+          "request": {
+            "name": "Micronaut Application health",
+            "description": {
+              "content": "Returns the health status of the application and its indicators (disk space, database, etc.)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "health"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0a6da36f-54f5-4357-b42f-afd957cffa9b",
+              "name": "Application is healthy",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "health"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"status\": \"UNKNOWN\",\n  \"details\": {\n    \"key_0\": {\n      \"name\": \"string\",\n      \"status\": \"string\",\n      \"details\": {\n        \"key_0\": 5444.014356155021,\n        \"key_1\": \"string\",\n        \"key_2\": 8414.348963632265,\n        \"key_3\": \"string\",\n        \"key_4\": 1476\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0c87abf3-2fe4-4294-8409-18d8758a2ef8",
+              "name": "Application is unhealthy",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "health"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"status\": \"UNKNOWN\",\n  \"details\": {\n    \"key_0\": {\n      \"name\": \"string\",\n      \"status\": \"string\",\n      \"details\": {\n        \"key_0\": 5444.014356155021,\n        \"key_1\": \"string\",\n        \"key_2\": 8414.348963632265,\n        \"key_3\": \"string\",\n        \"key_4\": 1476\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:8080",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3cbc6c69-61e9-409d-9426-881228210c33",
+    "name": "Micronaut Management Endpoints Beans Health API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Micronaut Management provides built-in endpoints for monitoring and managing Micronaut applications. Endpoints include health checks, application info, beans introspection, loggers management, metrics, routes, environment, and thread dumps.\n\nContact Support:\n Name: Micronaut Team",
+      "type": "text/plain"
+    }
+  }
+}

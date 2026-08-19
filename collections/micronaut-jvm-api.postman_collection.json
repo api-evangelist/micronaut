@@ -1,0 +1,102 @@
+{
+  "item": [
+    {
+      "id": "de44fffb-1dc1-4d63-b8d8-b1940f95ad84",
+      "name": "JVM",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2b59c689-b8d1-42d0-b4b6-154ab46b4091",
+          "name": "Micronaut Thread dump",
+          "request": {
+            "name": "Micronaut Thread dump",
+            "description": {
+              "content": "Returns a thread dump of the JVM",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "threaddump"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9f2701b9-aecb-4e5d-9306-470e89156a34",
+              "name": "Thread dump",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "threaddump"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:8080",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "fd9bd493-d998-4554-ac64-c8b3c09556cd",
+    "name": "Micronaut Management Endpoints Beans JVM API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Micronaut Management provides built-in endpoints for monitoring and managing Micronaut applications. Endpoints include health checks, application info, beans introspection, loggers management, metrics, routes, environment, and thread dumps.\n\nContact Support:\n Name: Micronaut Team",
+      "type": "text/plain"
+    }
+  }
+}

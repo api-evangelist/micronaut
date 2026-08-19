@@ -1,0 +1,102 @@
+{
+  "item": [
+    {
+      "id": "36052351-6d64-4d3d-80e7-1ae175125514",
+      "name": "Beans",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "061c4f60-1408-470e-ba35-d35a9261f87b",
+          "name": "Micronaut List application beans",
+          "request": {
+            "name": "Micronaut List application beans",
+            "description": {
+              "content": "Returns all bean definitions in the application context",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "beans"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "af8f7bb9-7dbc-4fbd-8d5c-5fa7bd69301b",
+              "name": "Bean definitions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "beans"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"beans\": [\n    {\n      \"type\": \"string\",\n      \"scope\": \"string\",\n      \"qualifier\": \"string\",\n      \"dependencies\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"type\": \"string\",\n      \"scope\": \"string\",\n      \"qualifier\": \"string\",\n      \"dependencies\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:8080",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c00a52fa-2d8a-4edc-a4ff-47996998fc86",
+    "name": "Micronaut Management Endpoints Beans API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Micronaut Management provides built-in endpoints for monitoring and managing Micronaut applications. Endpoints include health checks, application info, beans introspection, loggers management, metrics, routes, environment, and thread dumps.\n\nContact Support:\n Name: Micronaut Team",
+      "type": "text/plain"
+    }
+  }
+}

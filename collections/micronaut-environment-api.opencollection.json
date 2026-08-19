@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Micronaut Management Endpoints Beans Environment API",
+    "version": "4.7.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Environment",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Micronaut Environment properties",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/env"
+          },
+          "docs": "Returns all resolved configuration properties and their sources"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

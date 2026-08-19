@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Micronaut Management Endpoints Beans Loggers API",
+    "version": "4.7.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Loggers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Micronaut List all loggers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/loggers"
+          },
+          "docs": "Returns all logger configurations and their levels"
+        },
+        {
+          "info": {
+            "name": "Micronaut Get logger level",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/loggers/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Micronaut Get logger level"
+        },
+        {
+          "info": {
+            "name": "Micronaut Set logger level",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8080/loggers/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Micronaut Set logger level"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
