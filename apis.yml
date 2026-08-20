@@ -18,6 +18,13 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/micronaut.png
 tags:
+  - Cloud-Native
+  - Frameworks
+  - Java
+  - JVM
+  - Microservices
+  - Serverless
+tags_raw:
   - Cloud Native
   - Frameworks
   - Java
