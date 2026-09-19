@@ -30,7 +30,7 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/micronaut.png
 tags:
   - Cloud-Native
-  - Frameworks
+  - Framework
   - Java
   - JVM
   - Microservices
