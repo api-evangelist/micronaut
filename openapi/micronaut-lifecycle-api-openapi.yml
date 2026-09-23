@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Micronaut Management Endpoints Beans Lifecycle API
+  title: Micronaut Management Endpoints Lifecycle API
   description: Micronaut Management provides built-in endpoints for monitoring and managing Micronaut applications. Endpoints include health checks, application info, beans introspection, loggers management, metrics, routes, environment, and thread dumps.
   version: 4.7.0
   contact:

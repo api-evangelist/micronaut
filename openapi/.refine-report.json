@@ -1,16 +1,7 @@
 {
   "provider": "micronaut",
   "sources": [
-    "micronaut-beans-api-openapi.yml",
-    "micronaut-configuration-api-openapi.yml",
-    "micronaut-environment-api-openapi.yml",
-    "micronaut-health-api-openapi.yml",
-    "micronaut-info-api-openapi.yml",
-    "micronaut-jvm-api-openapi.yml",
-    "micronaut-lifecycle-api-openapi.yml",
-    "micronaut-loggers-api-openapi.yml",
-    "micronaut-metrics-api-openapi.yml",
-    "micronaut-routes-api-openapi.yml"
+    "_original/micronaut-management-openapi.yml"
   ],
   "outputs": [
     "micronaut-beans-api-openapi.yml",
@@ -27,6 +18,21 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "micronaut-management-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "micronaut-beans-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "micronaut-configuration-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "micronaut-environment-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "micronaut-health-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "micronaut-info-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "micronaut-jvm-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "micronaut-lifecycle-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "micronaut-loggers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "micronaut-metrics-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "micronaut-routes-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
