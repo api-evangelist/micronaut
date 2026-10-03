@@ -82,7 +82,7 @@ paths:
                   - INFO
                   - WARN
                   - ERROR
-                  - false
+                  - 'OFF'
       responses:
         '200':
           description: Logger level updated
