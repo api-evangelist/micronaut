@@ -1,4 +1,4 @@
-# Micronaut (micronaut)
+# Micronaut
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,63 +66,152 @@
 
 Micronaut is a modern JVM-based framework for building modular, easily testable microservice and serverless applications with ahead-of-time compilation and minimal memory consumption.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/micronaut/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/micronaut/refs/heads/main/apis.yml)
+**Areas:** Cloud-Native · Framework · Java · JVM · Microservices · Serverless
 
-## Scope
+## Micronaut on APIs.io
 
-- **Type:** Index
+Everything profiled for Micronaut is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/micronaut/](https://apis.io/providers/micronaut/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (10)
 
-- Cloud Native
-- Frameworks
-- Java
-- JVM
-- Microservices
-- Serverless
+- [Micronaut Beans API](https://apis.io/apis/micronaut/micronaut-beans-api/) — The Beans API from Micronaut — 1 operation(s) for beans.
+- [Micronaut Configuration API](https://apis.io/apis/micronaut/micronaut-configuration-api/) — The Configuration API from Micronaut — 1 operation(s) for configuration.
+- [Micronaut Environment API](https://apis.io/apis/micronaut/micronaut-environment-api/) — The Environment API from Micronaut — 1 operation(s) for environment.
+- [Micronaut Health API](https://apis.io/apis/micronaut/micronaut-health-api/) — The Health API from Micronaut — 1 operation(s) for health.
+- [Micronaut Info API](https://apis.io/apis/micronaut/micronaut-info-api/) — The Info API from Micronaut — 1 operation(s) for info.
+- [Micronaut JVM API](https://apis.io/apis/micronaut/micronaut-jvm-api/) — The JVM API from Micronaut — 1 operation(s) for jvm.
+- [Micronaut Lifecycle API](https://apis.io/apis/micronaut/micronaut-lifecycle-api/) — The Lifecycle API from Micronaut — 1 operation(s) for lifecycle.
+- [Micronaut Loggers API](https://apis.io/apis/micronaut/micronaut-loggers-api/) — The Loggers API from Micronaut — 2 operation(s) for loggers.
+- [Micronaut Metrics API](https://apis.io/apis/micronaut/micronaut-metrics-api/) — The Metrics API from Micronaut — 2 operation(s) for metrics.
+- [Micronaut Routes API](https://apis.io/apis/micronaut/micronaut-routes-api/) — The Routes API from Micronaut — 1 operation(s) for routes.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-26
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### MCP servers (1)
 
-### Micronaut
+Model Context Protocol servers that expose the API to agents.
 
-Micronaut is a modern JVM-based framework for building modular, easily testable microservice and serverless applications with ahead-of-time compilation and minimal memory consumption.
+- [MCP Server](https://apis.io/servers/micronaut/mcp-server/)
 
-- **Human URL:** [https://micronaut.io/](https://micronaut.io/)
+#### Agentic access (1)
 
-#### Tags
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- Cloud Native
-- Frameworks
-- Java
-- JVM
-- Microservices
-- Serverless
+- [Micronaut Agentic Access](https://apis.io/agentic-access/micronaut/micronaut-agentic-access/)
 
-#### Properties
+#### JSON Schema (1)
 
-- [Documentation](https://docs.micronaut.io/latest/guide/)
-- [Getting Started](https://guides.micronaut.io/)
-- [JSON Schema](json-schema/micronaut-application-config.json) — [JSON Schema](https://json-schema.org/specification)
-- [OpenAPI](openapi/micronaut-management-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/micronaut-management.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/micronaut-management.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+The data models the API reads and writes.
 
-## Common Properties
+- [Micronaut Application Configuration](https://apis.io/schemas/micronaut/micronaut-application-config/)
 
-- [LinkedIn](https://www.linkedin.com/showcase/micronaut)
+#### Collections (11)
+
+Postman and Open Collection request collections.
+
+- [Micronaut Management Endpoints Beans API](https://apis.io/collections/micronaut/open-micronaut-beans-api/)
+- [Micronaut Management Endpoints Beans Configuration API](https://apis.io/collections/micronaut/open-micronaut-configuration-api/)
+- [Micronaut Management Endpoints Beans Environment API](https://apis.io/collections/micronaut/open-micronaut-environment-api/)
+- [Micronaut Management Endpoints Beans Health API](https://apis.io/collections/micronaut/open-micronaut-health-api/)
+- [Micronaut Management Endpoints Beans Info API](https://apis.io/collections/micronaut/open-micronaut-info-api/)
+- [Micronaut Management Endpoints Beans JVM API](https://apis.io/collections/micronaut/open-micronaut-jvm-api/)
+- [Micronaut Management Endpoints Beans Lifecycle API](https://apis.io/collections/micronaut/open-micronaut-lifecycle-api/)
+- [Micronaut Management Endpoints Beans Loggers API](https://apis.io/collections/micronaut/open-micronaut-loggers-api/)
+- [Micronaut Management Endpoints API](https://apis.io/collections/micronaut/open-micronaut-management/)
+- [Micronaut Management Endpoints Beans Metrics API](https://apis.io/collections/micronaut/open-micronaut-metrics-api/)
+- [Micronaut Management Endpoints Beans Routes API](https://apis.io/collections/micronaut/open-micronaut-routes-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Micronaut — jsonschema rules](https://apis.io/rules/micronaut/micronaut-jsonschema-spectral-rules/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Micronaut Domain Security](https://apis.io/security/micronaut/micronaut-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Micronaut Plans Pricing](https://apis.io/plans/micronaut/micronaut-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Micronaut Rate Limits](https://apis.io/rate-limits/micronaut/micronaut-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Micronaut Finops](https://apis.io/finops/micronaut/micronaut-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://micronaut.io/)
 - [Documentation](https://docs.micronaut.io/latest/guide/)
-- [Getting Started](https://guides.micronaut.io/)
-- [GitHub Organization](https://github.com/micronaut-projects)
+- [Getting started](https://guides.micronaut.io/)
 - [Blog](https://micronaut.io/blog/)
-- [M C P Server](https://github.com/micronaut-projects/micronaut-mcp)
+- [GitHub](https://github.com/micronaut-projects)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 22.0** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 48.3 |
+| Contract quality | 41.5 |
+| Contract governance | 9.8 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 7.9 |
+
+**Agent readiness 18.5** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/micronaut/](https://apis.io/providers/micronaut/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Micronaut: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/micronaut/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
